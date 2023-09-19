@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stilizuotos lentelės</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <style>
+        body {
+            /* Šrifto priskyrimas */
+            font-family: 'Roboto', sans-serif;
+            background-color: #1f2739;
+        }
+        table {
+            /* elemento pločio nustatymas */
+            width: 100%;
+            /* Tarpelių tarp eilučių ir stulepių nustatymas */
+            border-spacing: 0;
+        }
+
+
+        th {
+            color: #18526e;
+            text-align: left;
+            height: 45px;
+            /* teksto rikiavimui į kairę */
+            /* text-align: left; */
+            /* teksto rikiavimui į dešinę */
+            /* text-align: right; */
+            /* teksto rikiavimui per centrą */
+            /* text-align: center; */
+            /* teksto rikiavimui tarp kairės ir dešinės */
+            /* text-align: justify; */
+        }
+
+        td {
+            height: 45px;
+            color: #9a95a2;
+            /* border: storis stilius spalva */
+            /* Kraštinė iš kairės */
+            border-left: 1px solid white;
+            /* Kraštinė iš dešinės */
+            /* border-right: 1px solid white; */
+            /* Kraštinė iš viršaus */
+            border-top: 1px solid white;
+            /* Kraštinė iš apačios */
+            /* border-bottom: 1px solid white; */
+
+            /* padding - turinio atitraukimui nuo elemento kraštų */
+
+            padding-left: 10px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            padding-right: 10px;
+        }
+
+        tbody tr {
+            background-color: #323c50;
+        }
+
+        tbody tr:nth-child(even) {
+            background-color: #2c3446;
+        }
+
+        tbody tr:nth-child(1) {
+            background-color: #464a52;
+        }
+
+        tbody tr td:last-child {
+            border-right: 1px solid white;
+        }
+
+        tbody tr:last-child td {
+            border-bottom: 1px solid white;
+        }
+
+        a {
+            color: #d05f70;
+            /* Nuima nuo nuorodos po tekstu esantį brūkšnį */
+            text-decoration: none;
+            /* Prideda prie nuorodos po tekstu esantį brūkšnį */
+            /* text-decoration: underline; */
+        }
+
+        /* #18526e
+        #464a52
+        #d05f70
+        #2c3446
+        #323c50
+        #9a95a2
+        #20283a 
+        
+        #fff842
+        #6c691b*/
+
+    </style>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>Sites</th>
+                <th>Views</th>
+                <th>Clicks</th>
+                <th>Average</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <a href="">Google</a>
+                </td>
+                <td>9518</td>
+                <td>6369</td>
+                <td>01:32:50</td>
+            </tr>
+            <tr>
+                <td>
+                    <a href="">Google</a>
+                </td>
+                <td>9518</td>
+                <td>6369</td>
+                <td>01:32:50</td>
+            </tr>
+            <tr>
+                <td>
+                    <a href="">Google</a>
+                </td>
+                <td>9518</td>
+                <td>6369</td>
+                <td>01:32:50</td>
+            </tr>
+            <tr>
+                <td>
+                    <a href="">Google</a>
+                </td>
+                <td>9518</td>
+                <td>6369</td>
+                <td>01:32:50</td>
+            </tr>
+            <tr>
+                <td>
+                    <a href="">Google</a>
+                </td>
+                <td>9518</td>
+                <td>6369</td>
+                <td>01:32:50</td>
+            </tr>
+            <tr>
+                <td>
+                    <a href="">Google</a>
+                </td>
+                <td>9518</td>
+                <td>6369</td>
+                <td>01:32:50</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

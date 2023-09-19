@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Style</title>
+    <!-- Internal Stilius -->
+    <style>
+        /* Elemento selektorius */
+        div {
+           color:blue; 
+        }
+
+        /* grotelės (hash) nurodo elemento atributą id */
+        #keturi {
+            color: tomato;
+        }
+
+        /* !Important raktažodis perrašo visas taisykles įskaitant ir style atributus */
+        .color-red {
+            color: red !important;
+            font-size: 40px;
+        }
+
+        /* taškas nurodo klasės selektorių */
+        .bigger-size {
+            /* font-size nurodo šrifto dydį */
+            /* font-size: 16px; */
+            font-size: 200%;
+        }
+    </style>
+    <!-- External Stilius -->
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+    <!-- 
+        Spalvų užrašymo formatai:
+        white, black, red
+        hex #000000 - Juoda spalva
+        hls()
+        rgb() - rgba()
+        rgb(0, 0, 0); Juodos spalvos kodas
+    -->
+    <!-- Inline stiliaus užrašymas -->
+    <!-- <div style="color:rgb(66, 38, 167)">1</div> -->
+
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div id="keturi" class="color-red bigger-size" style="color: gray">4</div>
+    <div>5</div>
+
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div class="color-red">4</div>
+    <div>5</div>
+</body>
+</html>

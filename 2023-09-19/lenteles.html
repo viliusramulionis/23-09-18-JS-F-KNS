@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tables</title>
+</head>
+<body>
+    <table border="1" width="100%">
+        <thead>
+            <tr>
+                <th height="50">Pavadinimas</th>
+                <th>Kiekis</th>
+                <th>Kaina</th>
+                <th>Gauta</th>
+                <th>Suma</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- <tr> table row, nurodo eilutę -->
+            <tr>
+                <!-- <td> table data, nurodo stulpelį -->
+                <td colspan="3">1</td>
+                <td width="200">4</td>
+                <td>5</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>2</td>
+                <td rowspan="2">3</td>
+                <td>4</td>
+                <td>5</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>2</td>
+                <td>4</td>
+                <td>5</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+                <td>4</td>
+                <td>5</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+                <td>4</td>
+                <td>5</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="4"></td>
+                <td>500.99</td>
+            </tr>
+        </tfoot>
+    </table>
+</body>
+</html>
