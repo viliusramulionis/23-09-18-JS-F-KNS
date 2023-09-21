@@ -1,0 +1,84 @@
+/* Šrifto importavimas */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+/* Stiliaus importavimas css faile */
+/* @import url('stilius.css'); */
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Fluid - terminas reiškia dizainą per visą tinklapio plotį */
+/* Fixed - fiksuotas tinklapio turinio plotis */
+.container {
+    width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+
+    /* margin: 0 auto; */
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 0;
+}
+
+h2 {
+    text-align: center;
+}
+
+p {
+    text-align: center;
+    margin-top: 0;
+}
+
+.main-table {
+    width: 100%;
+    border-left: 1px solid #4d4d4d;
+    border-top: 1px solid #4d4d4d;
+    border-collapse: collapse;
+}
+
+.main-table > tbody > tr > td {
+    border-right: 1px solid #4d4d4d;
+    border-bottom: 1px solid #4d4d4d;
+}
+
+.main-table table {
+    width: 100%;
+    text-align: center;
+}
+
+.main-table table thead tr:nth-child(1) td,
+.main-table table thead tr:nth-child(2) td {
+    text-transform: uppercase;
+    /* Šrifto storis */
+    font-weight: 700;
+}
+
+.main-table table tbody tr td:nth-child(1),
+.red {
+    color: red;
+}
+
+.holidays {
+    width: 100%;
+}
+
+.date {
+    display: inline-block;
+    width: 50px;
+}
+
+.spacer {
+    display: inline-block;
+    width: 30px;
+    text-align: center;
+}
