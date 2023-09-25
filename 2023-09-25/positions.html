@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Positions</title>
+    <style>
+        body {
+            margin: 0;
+        }
+        .box {
+            width: 150px;
+            height: 150px;
+            background-color: yellow;
+        }
+
+        .absolute {
+            position: absolute;
+            /* top ir left reikšmėms yra teikiamas prioritetas right ir bottom reikšmių atžvilgiu */
+            top: 100px;
+            left: 300px;
+        }
+
+        .red {
+            background-color: red;
+        }
+
+        .bottom-right {
+            top: unset;
+            left: unset;
+            right: 20px;
+            bottom: 50px;
+        }
+
+        .small-box {
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            top: 50px;
+            left: 50px;
+        }
+
+        .blue {
+            /* 
+                Pagal nutylėjimą elementam priskirta position reikšmė yra static 
+                position: static;
+            */
+            background-color: blue;
+        }
+
+        .relative {
+            position: relative;
+            top: 50px;
+            left: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box absolute bottom-right"></div>
+    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Itaque aperiam, harum animi ratione ea enim. Vitae repellat nostrum, ea distinctio culpa iure eligendi odit quo molestias earum sapiente perspiciatis ratione voluptatum enim? Et harum nam fugiat, ad id expedita quaerat esse accusamus corrupti voluptatum voluptates, autem quae culpa delectus. Repellat corporis error iste, molestiae delectus impedit pariatur at. Corrupti cum laborum illum at harum, sapiente fugiat nulla, dignissimos laboriosam deleniti qui, suscipit cupiditate mollitia dicta ratione corporis ea amet! Illum commodi sunt autem ipsum omnis quos laboriosam, incidunt reprehenderit ipsa. Ratione excepturi numquam corrupti nam quibusdam aliquid veniam voluptatibus reiciendis?
+    <div class="box red relative">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolore, pariatur.
+        <div class="small-box blue"></div>
+    </div>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea fuga necessitatibus ratione ducimus debitis, natus esse similique iure quis repellendus velit enim recusandae et, fugiat quos fugit! Aut cumque nihil error, consequatur impedit deserunt ut quidem veritatis laboriosam vero at? Non illum ullam, animi tempora provident reiciendis impedit exercitationem alias.
+</body>
+</html>

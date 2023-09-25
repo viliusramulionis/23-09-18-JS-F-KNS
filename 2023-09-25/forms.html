@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0"
+		/>
+		<title>Forms</title>
+        <style>
+            * {
+                box-sizing: border-box;
+            }
+
+            label {
+                display: block;
+            }
+
+            select,
+            textarea,
+            input {
+                width: 100%;
+                padding: 5px 10px;
+                border: 1px solid rgb(208, 208, 208);
+            }
+
+            input[type="radio"],
+            input[type="checkbox"] {
+                width: auto;
+            }
+
+            div {
+                margin-bottom: 10px;
+            }
+
+            .inline {
+                display: flex;
+            }
+        </style>
+	</head>
+	<body>
+        <!-- https://www.w3schools.com/html/html_form_elements.asp -->
+        <!-- https://www.w3schools.com/html/html_form_input_types.asp -->
+		<!-- Forma yra blokinio tipo elementas -->
+		<form>
+			<!-- Pagal nutylėjimą: input elementas yra inline tipo -->
+			<div>
+				<label>Jūsų vardas:</label>
+				<input
+					type="text"
+					placeholder="Jonas Jonaitis"
+					required
+				/>
+			</div>
+			<div>
+				<label>Adresas:</label>
+				<input
+					type="text"
+					value="Vytauto pr. 29"
+					disabled
+				/>
+			</div>
+			<div>
+				<label>Miestas:</label>
+				<input
+					type="text"
+					value="Kaunas"
+					readonly
+				/>
+			</div>
+			<div>
+				<label>Jūsų el. pašto adresas</label>
+				<input
+					type="email"
+					placeholder="testas@gmail.com"
+					required
+				/>
+			</div>
+			<div>
+				<label>Gimimo data</label>
+				<input
+					type="date"
+					min="2023-09-25"
+					max="2023-10-25"
+					required
+				/>
+			</div>
+			<div>
+				<label>Gimimo data ir laikas</label>
+				<input
+					type="datetime-local"
+					required
+				/>
+			</div>
+			<div>
+				<label>Mėgtamiausia spalva</label>
+				<input
+					type="color"
+					required
+				/>
+			</div>
+			<div>
+				<label>Jūsų nuotrauka</label>
+				<input
+					type="file"
+					required
+				/>
+			</div>
+			<div>
+				<label>Jūsų slaptažodis</label>
+				<input
+					type="password"
+					required
+				/>
+			</div>
+			<!-- Neatvaizduojamas (paslėptas) laukelis -->
+			<input
+				type="hidden"
+				value="Reikšmė"
+			/>
+
+			<div>
+				<label>
+					<input type="checkbox" />
+					Su taisyklėmis susipažinau
+				</label>
+			</div>
+			<div class="inline">
+				<input
+					id="newsletter"
+					type="checkbox"
+				/>
+				<label for="newsletter"> Sutinku gauti naujienlaiškį </label>
+			</div>
+			<div>
+				<h3>Pasirinkite Jus dominančią temą:</h3>
+				<div>
+					<label>
+						<input type="radio" name="topic" />
+						Sąskaitų apmokėjimas
+					</label>
+				</div>
+				<div>
+					<label>
+						<input type="radio" name="topic" />
+						Įmonėms
+					</label>
+				</div>
+				<div>
+					<label>
+						<input type="radio" name="topic" />
+						Vėluojamas apmokėjimas
+					</label>
+				</div>
+			</div>
+            <div>
+                <h3>Pasirinkite Jus dominančią temą:</h3>
+                <select>
+                    <option>Sąskaitų apmokėjimas</option>
+                    <optgroup>
+                        <option>Įmonėms</option>
+                        <option>Vėluojamas apmokėjimas</option>
+                    </optgroup>
+                </select>
+            </div>
+            <div>
+                <label>Jūsų žinutė</label>
+                <textarea placeholder="Žinutės tekstas"></textarea>
+            </div>
+			<button>Siųsti</button>
+			<button type="reset">Atstatyti</button>
+		</form>
+	</body>
+</html>
