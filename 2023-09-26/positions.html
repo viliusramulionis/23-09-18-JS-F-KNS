@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Positions</title>
+    <style>
+        .parent {
+            width: 500px;
+            height: 500px;
+            margin: 0 auto;
+            background-color: yellow;
+            position: relative;
+        }
+
+        .child {
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            top: 50px;
+            left: 50px;
+            background-color: purple;
+        }
+
+        .red {
+            background-color: red;
+            top: 80px;
+            left: 80px;
+        }
+
+        .relative {
+            width: 100px;
+            height: 100px;
+            position: relative;
+            z-index: 1;
+            top: 10px;
+            left: 10px;
+            background: black;
+        }
+    </style>
+</head>
+<body>
+    <div class="parent">
+        <!-- z-index nurodo elemento poziciją virš kitų absoliučių arba relityvių elementų -->
+        <div class="child" style="z-index: 1;"></div>
+        <div class="child red"></div>
+        <div class="relative"></div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0"
+		/>
+		<title>Responsive</title>
+		<style>
+			/* Reset */
+			body {
+				margin: 0;
+			}
+
+			* {
+				box-sizing: border-box;
+			}
+
+			/* Bendrines klasės */
+
+			.container {
+				width: 100%;
+				max-width: 1024px;
+				/* max-width, min-width, max-height, min-height */
+				margin: 0 auto;
+				padding-left: 15px;
+				padding-right: 15px;
+			}
+
+			.row {
+				display: flex;
+				gap: 15px;
+			}
+
+			.col-12 {
+				width: 100%;
+			}
+			.col-11 {
+				width: 91.66666666666667%;
+			}
+			.col-10 {
+				width: 83.33333333333333%;
+			}
+			.col-9 {
+				width: 75%;
+			}
+			.col-8 {
+				width: 66.66666666666667%;
+			}
+			.col-7 {
+				width: 58.33333333333333%;
+			}
+			.col-6 {
+				width: 50%;
+			}
+			.col-5 {
+				width: 41.66666666666667%;
+			}
+			.col-4 {
+				width: 33.3333333333%;
+			}
+			.col-3 {
+				width: 25%;
+			}
+			.col-2 {
+				width: 16.66666666666667%;
+			}
+			.col-1 {
+				width: 8.333333333333333%;
+			}
+
+			.height100 {
+				height: 100px;
+			}
+
+			.red {
+				background-color: red;
+			}
+			.black {
+				background-color: black;
+			}
+
+			/* Individualūs selektoriai */
+
+			/* @media screen and (max-width: 768px) {
+            .red {
+                background-color: purple;
+            }
+
+            .black {
+                background-color: orange;
+            }
+        } */
+
+			@media screen and (min-width: 768px) {
+				.red {
+					background-color: purple;
+				}
+
+				.black {
+					background-color: orange;
+				}
+
+				.row {
+					/* display: block; */
+					flex-direction: column;
+				}
+
+				.col {
+					width: 100%;
+				}
+			}
+
+			@media screen and (min-width: 1024px) {
+				.red {
+					background-color: rgb(2, 189, 24);
+				}
+
+				.black {
+					background-color: rgb(0, 219, 252);
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div class="row">
+				<div class="red col-6 height100 col"></div>
+				<div class="black col-6 height100 col"></div>
+			</div>
+		</div>
+	</body>
+</html>

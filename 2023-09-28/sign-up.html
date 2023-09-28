@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            /* background-color: #08080B; */
+        }
+        .container {
+            width: 1024px;
+            margin: 0 auto;
+            display: flex;
+            background: #131313 url(bg.png) no-repeat bottom left / cover;
+            justify-content: end;
+            border-radius: 25px;
+            overflow: hidden;
+        }
+
+        .form {
+            width: 75%;
+            background-color: #242424;
+            height: 500px;
+            padding: 150px;
+        }
+
+        input[type="checkbox"] {
+            display: none;
+        }
+
+        label {
+            width: 25px;
+            height: 25px;
+            border: 1px solid rgb(78, 78, 78);
+            border-radius: 2px;
+            display: block;
+            position: relative;
+        }
+
+        /* + Nurodo sekantį elementą */
+        input[type="checkbox"]:checked + label {
+            background-color: aliceblue;
+        }
+
+        /* top: 7.5px; */
+        /* left: 7.5px; */
+        /* 
+            + Sudėtis
+            - Atimtis
+            * Daugyba
+            / Dalyba 
+        */
+        /* 
+            top: calc((100% - 10px) / 2);
+            left: calc((100% - 10px) / 2); 
+        */
+
+        /* input[type="checkbox"]:checked + label::before {
+            content: "";
+            width: 10px;
+            height: 10px;
+            background-color: #131313;
+            border-radius: 50%;
+            display: block;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        } */
+
+        input[type="checkbox"]:checked + label::before { 
+            content: "\F26E";
+            font-family: 'bootstrap-icons';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="form">
+            <input id="check" type="checkbox">
+            <label for="check"></label>
+        </div>
+    </div>
+</body>
+</html>

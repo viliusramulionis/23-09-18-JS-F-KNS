@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>States</title>
+    <style>
+        a {
+            color: tomato;
+        }
+        /* Fazės selektorius pelės užvedimui */
+        a:hover {
+            color: red;
+            background-color: black;
+            text-decoration: none;
+            /* transition: color 500ms ease-in-out; */
+            /* transition: color 2s ease; */
+            transition: all 2s ease;
+        }
+
+        a:visited {
+            color: black;
+        }
+
+        a:active {
+            color: blue;
+        }
+
+        input {
+            width: 400px;
+            border: 1px solid rgb(208, 208, 208);
+        }
+        /* https://cssgenerator.pl/en/box-shadow-generator/ */
+        input:focus {
+            outline: none;
+            border: 1px solid red;
+            border-radius: 3px;
+            box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.36);
+            transition: all .2s ease-in-out;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li><a href="icons.html">Icons</a></li>
+        <li><a href="positions.html">Positions</a></li>
+    </ul>
+    <form>
+        <input type="text">
+    </form>
+</body>
+</html>
