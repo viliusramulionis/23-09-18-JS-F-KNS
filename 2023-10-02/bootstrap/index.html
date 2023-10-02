@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+        .column {
+            background-color: gray;
+            height: 100px;
+            border: 2px solid black;
+        }
+
+        .btn-outline-primary {
+            --bs-btn-border-color: black;
+        }
+
+        .carousel-item div {
+            background-color: gray;
+            height: 300px;
+        }
+    </style>
+</head>
+<body>
+    <!-- https://getbootstrap.com/docs/5.3/layout/grid/ -->
+    <div class="container">
+        <h1>Hello World</h1>
+        <div class="row">
+            <div class="col-12 col-md-4">
+                <div class="column"></div>
+            </div>
+            <div class="col-12 col-md-4">
+                <div class="column"></div>
+            </div>
+            <div class="col-12 col-md-4">
+                <div class="column"></div>
+            </div>
+        </div>
+        <p class="text-center text-md-start">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ratione, obcaecati quae. Perferendis tempore aspernatur aliquam iusto minus assumenda quaerat, at accusantium optio voluptate id, illo eveniet mollitia, nisi fugit. Dolorem architecto nemo magni nam praesentium odio accusantium facilis illum, id maxime nostrum velit est, libero, incidunt laboriosam quam temporibus? Reiciendis beatae officia adipisci ipsum minus soluta provident consequuntur necessitatibus temporibus saepe, nulla id harum quae facere a ut atque et perspiciatis ex? Doloribus tempore, fugit quo nemo, fuga ad ducimus voluptatibus est quasi doloremque quisquam! Doloribus, recusandae porro. Aliquam recusandae nostrum adipisci aliquid in possimus alias natus. Necessitatibus facilis nostrum repudiandae maxime veritatis perspiciatis molestiae inventore aliquam? Fugit dolore rem fugiat qui, quasi iure dolorum ad, quidem temporibus aut quaerat adipisci quos nesciunt libero, expedita non commodi. Perspiciatis ipsam alias cum earum laboriosam, hic ullam ipsa, ducimus dignissimos aspernatur doloremque distinctio quam ea delectus! Repellat illo facere eligendi autem fuga veniam libero, suscipit minus labore ratione expedita adipisci inventore beatae ea! Beatae quia corrupti id natus nam praesentium, ab provident adipisci qui unde, doloribus nihil modi inventore delectus temporibus blanditiis mollitia itaque porro repudiandae necessitatibus rem tenetur nesciunt? Illum necessitatibus, eligendi deserunt culpa ea vitae fugit quo nisi hic sint amet quisquam ab deleniti sunt similique corrupti alias impedit iusto vero aliquid, aut porro, asperiores voluptas quasi? Sit ratione voluptate porro similique, officia, veritatis eveniet ex maiores praesentium expedita molestiae dignissimos eaque inventore accusamus, fugit deserunt natus perspiciatis ullam quae ea esse asperiores. Velit sit autem reprehenderit unde laborum facilis culpa enim, id, suscipit dicta blanditiis dolores voluptas architecto fugit vitae saepe dolore minima deleniti vel! Deleniti cum veritatis error, sed repudiandae qui fugiat ipsa libero blanditiis odio alias, iusto ducimus delectus quidem molestias explicabo cumque maxime! Quos nulla assumenda sapiente autem eligendi eos, fugiat tempora, incidunt repellat, quisquam sint excepturi commodi ipsum earum quas reprehenderit qui accusantium veniam sequi a voluptas quo inventore. Ad illo non totam nobis earum quo illum dolorum, odio animi, ipsum reprehenderit perspiciatis odit at ut autem, qui ratione mollitia! Quisquam ipsam dolores error eum vitae? Placeat laboriosam minus quod sed adipisci ad? Dicta sed recusandae animi ducimus deserunt veritatis id voluptatum quam sequi libero aliquid minus, distinctio maxime omnis dolorem explicabo aspernatur vitae temporibus nemo. Dignissimos delectus autem modi dolore quo laborum facere quisquam obcaecati omnis esse aliquam doloremque dolorum consequatur pariatur sunt, perspiciatis enim repellat praesentium commodi totam repellendus ipsum minus, sequi necessitatibus? Recusandae consectetur veniam, et hic libero voluptas, esse optio quos, quis ipsum exercitationem dignissimos quam cupiditate at! Pariatur ut repellendus minima expedita facilis harum vitae culpa incidunt, nesciunt vero architecto esse tenetur ipsum necessitatibus magnam debitis animi id eaque! Animi consectetur aut et veritatis autem ex saepe quasi quisquam inventore doloribus unde beatae voluptatum nemo neque, perspiciatis illum voluptate at veniam, minima amet odio dolorum? Sint cum, quia cumque voluptates possimus optio. Quisquam illum et mollitia dolorum dolore dolores eligendi debitis aspernatur odio veniam odit aut culpa amet impedit voluptate dicta, sint fugit ipsam est fugiat assumenda laboriosam repudiandae quos!</p>
+
+        <button class="btn btn-outline-primary">Primary</button>
+
+        <div id="carouselExample" class="carousel slide">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div>Pirma skaidrė</div>
+                <!-- <img src="..." class="d-block w-100" alt="..."> -->
+                </div>
+                <div class="carousel-item">
+                    <div>Antra skaidrė</div>
+                <!-- <img src="..." class="d-block w-100" alt="..."> -->
+                </div>
+                <div class="carousel-item">
+                    <div>Trečia skaidrė</div>
+                <!-- <img src="..." class="d-block w-100" alt="..."> -->
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
