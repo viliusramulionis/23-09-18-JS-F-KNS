@@ -1,0 +1,175 @@
+@font-face {
+    font-family: 'CircularStd';
+    src: url(../fonts/FontsFree-Net-CircularStd-Bold.ttf) format('truetype');
+    /* Realityvūs keliai: */
+    /* Vienas taškas žymi esamą direktoriją */
+    /* Du taškai žymi vieną direktoriją aukščiau */
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: 'CircularStd';
+    src: url(../fonts/FontsFree-Net-CircularStd-Black.ttf) format('truetype');
+    font-weight: 800;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'CircularStd';
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+}
+
+.container {
+    max-width: 1224px;
+    width: 100%;
+    margin: 0 auto;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+/* Grid */
+.row {
+    display: flex;
+    gap: 20px;
+}
+
+.col-12 {
+    width: 100%;
+}
+.col-11 {
+    width: 91.66666666666667%;
+}
+.col-10 {
+    width: 83.33333333333333%;
+}
+.col-9 {
+    width: 75%;
+}
+.col-8 {
+    width: 66.66666666666667%;
+}
+.col-7 {
+    width: 58.33333333333333%;
+}
+.col-6 {
+    width: 50%;
+}
+.col-5 {
+    width: 41.66666666666667%;
+}
+.col-4 {
+    width: 33.3333333333%;
+}
+.col-3 {
+    width: 25%;
+}
+.col-2 {
+    width: 16.66666666666667%;
+}
+.col-1 {
+    width: 8.333333333333333%;
+}
+
+/* Flex */
+
+.d-flex {
+    display: flex;
+}
+
+.justify-content-between {
+    justify-content: space-between;
+}
+
+.align-items-center {
+    align-items: center;
+}
+
+header {
+    font-size: .875rem;
+}
+
+header .container {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+header .mobile-nav {
+    display: none;
+}
+
+header nav ul {
+    gap: 2.5rem;
+}
+
+header nav a {
+    color: rgba(25, 24, 37, 0.5);
+}
+
+header nav a.active {
+    color: #222831;
+}
+
+header .auth a {
+    display: block;
+    padding: 16px 32px;
+    color: #222831;
+}
+
+header .auth a.sign-up {
+    background-color: #5D50C6;
+    border-radius: 30px;
+    color: #EEEEEE;
+}
+
+@media screen and (max-width: 1024px) {
+    header .mobile-nav {
+        display: block;
+        width: 218px;
+    }
+
+    header nav {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    header .container {
+        flex-direction: row-reverse;
+    }
+
+    header .mobile-nav {
+        width: auto;
+    }
+
+    header .auth {
+        display: none;
+    }
+}
+
+section.home .link a {
+    color: #F85E9F;
+    font-size: .875rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    border-radius: 30px;
+    padding: 15px 25px;
+    box-shadow: 0 8px 5px 0 rgba(0, 0, 0, 0.05);
+}
