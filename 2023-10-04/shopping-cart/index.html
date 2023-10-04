@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boostrap Shopping Cart</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+</head>
+<body>
+    <div class="container py-5">
+        <div class="row">
+            <div class="col-8">
+                <div class="d-flex gap-3">
+                    <div>
+                        <img src="images/cat3.jpg" alt="" class="rounded-3" style="width: 130px;">
+                    </div>
+                    <div>
+                        <h5>Sophisticated dress</h5>
+                        <ul class="list-unstyled fs-6 mt-3">
+                            <li>Size: <span>8.5</span></li>
+                            <li>Color: <span>Gray</span></li>
+                        </ul>
+                        <div class="d-flex mt-3">
+                            <a href="#" class="d-block border-end pe-3 text-decoration-none text-secondary">
+                                <i class="bi bi-trash3-fill"></i>
+                                <span>Remove</span>
+                            </a>
+                            <a href="#" class="d-block ps-3 text-decoration-none text-secondary">
+                                <i class="bi bi-heart-fill"></i>
+                                <span>Move to wish list</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="ms-auto">
+                        <form class="form-floating">
+                            <input type="number" class="form-control" value="1">
+                            <label>Input with value</label>
+                        </form>
+                        <div class="fs-5 my-3">
+                            <strong class="text-decoration-line-through text-secondary">$119</strong>
+                            <strong>$101</strong>
+                        </div>
+                        <div class="text-danger">You save 15%</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4">
+                <div>
+                    <h2>The total amount of</h2>
+                    <table>
+                        <tr>
+                            <td>Temporary amount</td>
+                            <td>$53.98</td>
+                        </tr>
+                        <tr>
+                            <td>Shipping</td>
+                            <td>Gratis</td>
+                        </tr>
+                    </table>
+                    <hr>
+                    <table>
+                        <tr>
+                            <td>The total amount includint VAT</td>
+                            <td>$53.98</td>
+                        </tr>
+                    </table>
+                    <a href="#" class="btn btn-primary">Go to Checkout</a>
+                </div>
+                <div>
+                    <h2>Apply promo code</h2>
+                    <div>
+                        <input type="text" placeholder="Promo code">
+                        <button class="btn">Apply</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
