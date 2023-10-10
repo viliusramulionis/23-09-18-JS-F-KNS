@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Map</title>
+    <style>
+        body {
+            cursor:crosshair;
+        }
+        img[src="o1.png"] {
+            border: 5px solid black;
+        }
+        a:hover::before {
+            content: attr(data-pasisveikinimas);
+        }
+    </style>
+</head>
+<body>
+    <img src="o1.png" usemap="#image-map">
+
+    <map name="image-map">
+        <area target="" alt="" title="" href="" coords="135,109,57" shape="circle">
+        <area target="" alt="" title="" href="" coords="484,49,555,50,556,90,578,94,578,144,558,145,554,166,486,166,483,146,463,145,461,95,483,90" shape="poly">
+    </map>
+
+    <a href="#" data-pasisveikinimas="Sveiki visi">
+        <img src="1.png">
+    </a>
+</body>
+</html>

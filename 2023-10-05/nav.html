@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigation</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+        html {
+            --container-width: 1170px;
+        }
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            margin: 0;
+            background-color: rgb(0, 0, 0);
+            font-family: 'Roboto', sans-serif;
+        }
+        ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        a {
+            text-decoration: none;
+            color: red;
+        }
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            width: 100%;
+            padding: 0 15px;
+        }
+        header {
+            background-color: white;
+        }
+        nav ul {
+            display: flex;
+            font-size: 20px;
+            justify-content: center;
+        }
+        nav a {
+            display: block;
+            padding: 10px 20px;
+        }
+        nav a:hover {
+            background-color: black;
+        }
+        nav li > div {
+            width: 100%;
+            height: 500px;
+            position: absolute;
+            left: 0;
+            background: red;
+            display: none;
+        }
+
+        nav li:hover > div {
+            display: block;
+        }
+
+        nav label {
+            display: none;
+            padding: 10px 0;
+        }
+
+        nav label span {
+            width: 30px;
+            display: block;
+            height: 4px;
+            background: black;
+            margin-bottom: 5px;
+        }
+
+        /* nav button span:first-child {
+        nav button span:last-child { */
+
+        nav button span:last-child {
+            margin-bottom: 0;
+        }
+
+        input {
+            display: none;
+        }
+
+        @media screen and (max-width: 768px) {
+            nav ul {
+                display: none;
+            }
+
+            nav label {
+                display: block;
+            }
+
+            /* nav button:hover + ul {
+                display: block;
+            } */
+
+            input:checked + ul {
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <label for="nav">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </label>
+                <input id="nav" type="checkbox">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li>
+                        <a href="#">Catalog</a>
+                        <div>
+                            <div class="container">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti est sint nesciunt vero dolore, sed velit a sunt incidunt natus totam consequuntur molestias animi aperiam. Reprehenderit iste quo necessitatibus animi placeat. Itaque esse sequi, quos nam labore adipisci impedit ex reprehenderit error nobis ab quod sit dolore perferendis maxime animi obcaecati et accusantium hic aut nesciunt! Dolore sed quae optio, id nesciunt est odio inventore animi ut omnis quod beatae, officia, voluptas excepturi debitis pariatur aliquam commodi corrupti doloribus soluta. Illo animi ullam totam possimus deserunt beatae sapiente sunt similique. Totam placeat reprehenderit iusto odio? Debitis, voluptate corrupti? Expedita, aperiam!
+                            </div>
+                        </div>
+                    </li>
+                    <li><a href="#">Contacts</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+</body>
+</html>
