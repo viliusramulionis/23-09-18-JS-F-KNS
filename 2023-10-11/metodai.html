@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metodai</title>
+    <style>
+        h1 {
+            font-size: 50px;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        // Globalūs kintamieji naršyklėje:
+        // window
+        // document
+
+        document.write(`<h1>Hello World</h1>`);
+
+        //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/indexOf
+        //Suranda ieškomo teksto pirmąją poziciją   
+
+        let stringas = '      It takes an optional starting position and returns the first occurrence of the specified substring at an index greater than or equal to the specified number.    ';
+        console.log(stringas.indexOf('starting'));
+
+        //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/trim
+        //Panaikina tarpus iš priekio ir pabaigos
+        console.log(stringas);
+        stringas = stringas.trim();
+        console.log(stringas);
+
+        //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/trimStart
+        //Panaikina tarpus tik iš priekio
+        
+        //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/trimEnd
+        //Panaikina tarpus tik iš pabaigos
+
+        //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase
+        console.log(stringas.toLowerCase());
+
+        //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase
+        console.log(stringas.toUpperCase());
+
+        //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/includes
+        //Tikrinimas ar stringe yra nurodyta frazė, žodis arba simbolis
+        console.log(stringas.includes('optional'));
+
+        //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/repeat
+        console.log('Labas'.repeat(15));
+
+        //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/charAt
+        console.log(stringas[0], stringas.charAt(0));
+
+        //Math 
+        //Didžiausio skaičiaus paieška
+        console.log(Math.max(4, 8, 20, 3, 55));
+        //Mažiausio skaičiaus paieška
+        console.log(Math.min(4, 8, 20, 3, 55));
+
+        //Numbers 
+        //Sveiko skaičiaus tikrinimas
+        //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/isInteger
+        console.log(Number.isInteger(3.12));
+
+        //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/isFinite
+        //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/isNaN
+
+        let x = 80;
+        //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/toString
+        //Skaičiaus konvertavimas į stringą
+        console.log(typeof x.toString());        
+    </script>
+</body>
+</html>

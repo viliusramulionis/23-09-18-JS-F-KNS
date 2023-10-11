@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ciklai</title>
+</head>
+<body>
+    <script>
+        function rand(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min + 1) + min);
+        }
+
+        // let i = 0;
+
+        // while(i < 10) {
+        //     console.log('Veikia');
+        //     i++;
+        // }
+        let i = 0;
+        let nuliai = 0;
+        let vienetai = 0;
+        let dvejetai = 0;
+
+        while(i < 4) {
+            let skaicius = rand(0, 2);
+
+            if(skaicius === 0)
+                nuliai++;
+
+            if(skaicius === 1)
+                vienetai++;
+
+            if(skaicius === 2)
+                dvejetai++;
+
+            i++; 
+        }
+
+        console.log(nuliai, vienetai, dvejetai);
+
+        
+    </script>
+</body>
+</html>

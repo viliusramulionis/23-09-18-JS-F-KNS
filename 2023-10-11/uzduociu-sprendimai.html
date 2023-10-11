@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Užduočių sprendimai</title>
+</head>
+<body>
+    <script>
+        function rand(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min + 1) + min);
+        }
+
+
+        //Sukurti du kintamuosius. Jiems priskirti savo mylimo 
+        //aktoriaus vardą ir pavardę kaip stringus (Jonas Jonaitis). 
+        //Atspausdinti trumpesnį stringą.
+
+        let vardas = 'Angelina';
+        let pavarde = 'Jolie';
+
+        if(vardas.length > pavarde.length) {
+            console.log('Vardas yra ilgesnis nei pavardė', pavarde);
+        } 
+        else if(vardas.length === pavarde.length) {
+            console.log('Stringai yra lygūs');
+        } 
+        else {
+            console.log('Pavardė yra ilgesnė už vardą', vardas);
+        }
+        
+        //Sukurkite 4 kintamuosius, kurie saugotų jūsų vardą, pavardę, 
+        //gimimo metus ir šiuos metus (nebūtinai tikrus). 
+        //Parašykite kodą, kuris pagal gimimo metus paskaičiuotų 
+        //jūsų amžių ir naudodamas vardo ir pavardės kintamuosius 
+        //atspausdintų tokį sakinį :
+        //"Aš esu Vardenis Pavardenis. Man yra XX metai(ų)".
+
+        vardas = 'Jonas';
+        pavarde = 'Jonaitis';
+        let metai = 1980;
+        let dabartiniaiMetai = 2023;
+        // let amzius = dabartiniaiMetai - metai;
+
+        console.log(`Aš esu ${vardas} ${pavarde}. Man yra ${dabartiniaiMetai - metai} metai(ų)`);
+
+        // let stringas = `
+        //     Viena Eilutė
+        //     Kita Eilutė
+        //     Trečia Eilutė
+        // `;
+
+        // console.log(stringas);
+
+        // let stringas = 'Viena Eilutė' +
+        //                 'Antra Eilutė' + 
+        //                 'Trečia Eilutė';
+
+        // Sukurti du kintamuosius. Jiems priskirti savo mylimo aktoriaus vardą
+        //  ir pavardę kaip stringus. Sukurti trečią kintamąjį ir jam 
+        // priskirti stringą, sudarytą iš trijų paskutinių vardo ir 
+        // pavardės kintamųjų raidžių. Jį atspausdinti.
+
+        let stringas =  vardas[vardas.length - 3] +
+                        vardas[vardas.length - 2] + 
+                        vardas[vardas.length - 1] +
+                        pavarde[pavarde.length - 3] +
+                        pavarde[pavarde.length - 2] +
+                        pavarde[pavarde.length - 1];
+
+        console.log(stringas);
+
+        // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/slice
+        stringas = vardas.slice(-3) + pavarde.slice(-3);
+
+        console.log(stringas);
+
+        //Sukurti kintamąjį su stringu: “Once upon a time in hollywood”. 
+        //Jame visas “o” (didžiąsias ir mažąsias) pakeisti žvaigždutėm “*”.  
+        //Rezultatą atspausdinti.
+
+        stringas = 'Once upon a time in hollywood';
+
+        stringas = stringas.replaceAll('o', '*').replaceAll('O', '*');
+        // stringas = stringas.replaceAll('O', '*');
+
+        // Regex variantas
+        // stringas = stringas.replaceAll(/[oO]/g, '*');
+        console.log(stringas);
+
+        //Sukurkite keturis kintamuosius kuriems sugeneruokite atsitiktines 
+        //reikšmes nuo 0 iki 2. Suskaičiuokite kiek yra nulių, vienetų ir dvejetų. 
+        let a = rand(0, 2);
+        let b = rand(0, 2);
+        let c = rand(0, 2);
+        let d = rand(0, 2);
+        let nuliai = 0;
+        let vienetai = 0;
+        let dvejetai = 0;
+
+        if(a === 0)
+            nuliai++;
+
+        if(b === 0)
+            nuliai++;
+
+        if(c === 0)
+            nuliai++;
+
+        if(d === 0)
+            nuliai++;
+
+        if(a === 1)
+            vienetai++;
+
+        if(b === 1)
+            vienetai++;
+
+        if(c === 1)
+            vienetai++;
+
+        if(d === 1)
+            vienetai++;
+
+        if(a === 2)
+            dvejetai++;
+
+        if(b === 2)
+            dvejetai++;
+
+        if(c === 2)
+            dvejetai++;
+
+        if(d === 2)
+            dvejetai++;
+
+        console.log('Gauti skaičiai', a, b, c, d);
+
+        console.log('Nuliai', nuliai, 'Vienetai', vienetai, 'Dvejetai', dvejetai);
+
+
+    </script>
+</body>
+</html>
