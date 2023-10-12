@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ciklai</title>
+</head>
+<body>
+    <script>
+        function rand(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min + 1) + min);
+        }
+
+        document.write('<h2>Pirma užduotis</h2>');
+
+        let i = 1;
+        let rezultatas = '';
+
+        while(i <= 400) {
+            rezultatas += '*';
+
+            if(i % 50 === 0)
+                rezultatas += '<br />';
+
+            i++;
+        }
+
+        document.write(rezultatas);
+
+        document.write('<h2>Antra užduotis</h2>');
+
+        let skaicius = rand(1, 6);
+
+        document.write(`<h${skaicius}>${skaicius}</h${skaicius}>`);
+
+        document.write('<h2>Trečia užduotis</h2>');
+
+        i = 0;
+        rezultatas = '';
+
+        while(i < 3) {
+            let skaicius = rand(-10, 10);
+            let color = 'green';
+
+            if(skaicius === 0)
+                color = 'red';
+
+            if(skaicius > 0)
+                color = 'blue';
+
+            rezultatas += `<span style="color: ${color}">${skaicius}</span>`;
+
+            i++;
+        }
+
+        document.write(rezultatas);
+
+        document.write('<h2>Ketvirta užduotis</h2>');
+
+        //Sukurkite kintamąjį su stringu: “An American in Paris”. 
+        //Jame ištrinti visas balses. Rezultatą atspausdinti. 
+        //Kodą pakartoti su stringais: “Breakfast at Tiffany's”, 
+        //“2001: A Space Odyssey” ir “It's a Wonderful Life”.
+
+        let stringas = 'An American in Paris';
+        let balses = 'aeiyou';
+        rezultatas = '';
+        // rezultatas = stringas.replaceAll(/[aeiyou]/gi, '');
+        i = 0;
+
+        balses += balses.toUpperCase();
+
+        while(i < stringas.length) {
+            if(!balses.includes(stringas[i])) 
+                rezultatas += stringas[i];
+
+            i++;
+        }
+
+        document.write(rezultatas);
+        
+    </script>
+</body>
+</html>
