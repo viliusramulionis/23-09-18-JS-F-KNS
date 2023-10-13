@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funkcijos</title>
+</head>
+<body>
+    <script>
+        function rand(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min + 1) + min);
+        }   
+
+        //Funkcinis programavimas
+        //Funkcijoje yra priimami parametrai (parameter)
+        function suma(pirmasParametras, antrasParametras) {
+            let rezultatas = pirmasParametras + antrasParametras;
+            console.log(rezultatas);
+        }
+
+        //Inicijuojant funkciją yra perduodami argumentai (argument)
+        suma(10, 20);
+        suma(15, 11);
+        suma(22, 27);
+
+        function skaiciuGeneratorius(a, b, c) {
+            let i = 0;
+            let rezultatas = '';
+            let skaiciuotuvas = 0;
+
+            while(i < c) {
+                let skaicius = rand(0, 300);
+
+                if(skaicius > a)
+                    rezultatas += `<span style="color: red;">${skaicius}</span> `;
+                else
+                    rezultatas += skaicius + ' ';
+
+                if(skaicius > b)
+                    skaiciuotuvas++;
+
+                i++;
+            }
+
+            document.write(rezultatas);
+            document.write(`<h3>Skaičių didesnių nei 150 yra: ${skaiciuotuvas}</h3>`);
+        }
+
+        //Skačiaus tikrinimas ar šis yra didesnis nei a = 15, b = 25, c = 200
+        //Skačiaus skaičiavimas ar šis yra didesnis nei a = 150, b = 175, c = 225
+        //Skaičių generavimas iki a = 300, b = 500, c = 700
+        
+        skaiciuGeneratorius(15, 150, 300);
+        skaiciuGeneratorius(25, 175, 500);
+        skaiciuGeneratorius(200, 225, 700);
+
+        //Klaida bandant perduoti daugiau argumentų nei funkcijoje yra parametrų
+        // function atimtis(a) {
+        //     console.log(a - b);
+        // }
+
+        // atimtis(10, 5);
+
+        function dalyba(a, b) {
+            return a / b;
+        }
+
+        console.log(dalyba(10, 3));
+        document.write(dalyba(10, 2));
+
+        let x = dalyba(25, 11);
+
+        console.log(x);
+    </script>
+</body>
+</html>

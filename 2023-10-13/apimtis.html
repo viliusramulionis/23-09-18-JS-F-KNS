@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scopes - Apimtys</title>
+</head>
+<body>
+    <script src="js/skriptas2.js"></script>
+    <script>
+        //Global Scope (Globali Apimtis)
+        let x = 10;
+        let y = 'Globali reikšmė';
+
+        for(let i = 0; i < 10; i++) {
+            console.log(x);
+        }
+
+        console.log(x);
+
+        // Block scope (Blokinė apimtis)
+
+        {
+            let zinute = 'Blokinėje apimtyje deklaruotas kintamasis';
+        }
+
+        // Kintamojo atspausdinimas globalioje apimtyje
+        // console.log(zinute);
+
+        let hello = 'Viso gero';
+        console.log(hello);
+        if(true) {
+            let hello = 'Sveiki';
+            console.log(hello);
+        }
+        console.log(hello);
+
+        if(true) {
+            hello = 'Sveiki';
+        }
+
+        console.log(hello);
+
+        //Var kintamasis neturi apimties
+
+        var skaicius = 10;
+        {
+            var skaicius = 15;
+        }
+
+        console.log(skaicius);
+    </script>
+    <script src="js/skriptas1.js"></script>
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ciklai</title>
+</head>
+<body>
+    <script>
+        function rand(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min + 1) + min);
+        }
+
+        // Do While ciklo pirmoji iteracija yra atliekama nepaisant kondicijos,
+        // Kadangi ši yra perskaitoma pabaigoje
+        let i = 0;
+
+        do {
+            console.log('Do While ciklas Veikia');
+            i++;
+        } while(i < 0);
+
+        // While cikle kondicija yra skaitoma prieš iteraciją
+
+        i = 0;
+
+        while(i < 0) {
+            console.log('While ciklas veikia');
+            i++;
+        }
+
+        // Ciklo sustabdymas
+        // Su Break komanda susbandomi visi interaciniai ciklai
+        i = 0;
+
+        while(true) {
+            console.log(i);
+
+            if(i === 10)
+                break; //Ciklo stabdymas naudojant break komanda
+
+            i++;
+        }
+
+        let raides = 'abcdefghijklmnopqrstuvwxyz';
+
+        //Sąlyga: Stabdome ciklą iškritus raidei "n"
+        //Kuomet nežinome kiek iteracijų mums prireiks, naudojame begalinį ciklą 
+        //Ir stabdymą atliekame break komanda
+
+        while(true) {
+            let raide = raides[rand(0, raides.length - 1)];
+            
+            console.log(raide);
+
+            if(raide === 'n')
+                break;
+        }
+
+        //Continue komanda
+
+        i = 0;
+
+        while(i < 100) {
+            i++;
+
+            if(i % 2 === 0)
+                continue; //Continue komanda praleidžia vieną ciklo iteraciją
+
+            console.log(i);
+        }
+
+        // For ciklas
+        for(let i = 0; i < 10; i++) {
+            console.log(i);
+        }
+
+        //Dekremento panaudojimas
+        for(let i = 10; i > 0; i--) {
+            console.log(i);
+        }
+
+
+        //For ciklo panaudojimas uŽduotyje
+        let rezultatas = '';
+        let skaiciuotuvas = 0;
+
+        for(let i = 0; i < 300; i++) {
+            let skaicius = rand(0, 300);
+
+            if(skaicius > 275)
+                rezultatas += `<span style="color: red;">${skaicius}</span> `;
+            else
+                rezultatas += skaicius + ' ';
+
+            if(skaicius > 150)
+                skaiciuotuvas++;
+        }
+
+        document.write(rezultatas);
+        document.write('Skaičių didesnių nei 150 yra:', skaiciuotuvas);
+
+        //For Cikle taipogi veikia ir continue ir break komandos
+    </script>
+</body>
+</html>

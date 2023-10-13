@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Užduočių sprendimai</title>
+</head>
+<body>
+    <script>
+        function rand(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min + 1) + min);
+        }   
+
+        document.write('<h1>Ketvirta užduotis</h1>');
+
+        //Sugeneruokite 300 atsitiktinių skaičių nuo 0 iki 300, 
+        //atspausdinkite juos atskirtus tarpais ir suskaičiuokite 
+        //kiek tarp jų yra didesnių už 150.  Skaičiai didesni nei 275 turi 
+        //būti raudonos spalvos.
+        let i = 0;
+        let rezultatas = '';
+        let skaiciuotuvas = 0;
+
+        while(i < 300) {
+            let skaicius = rand(0, 300);
+
+            if(skaicius > 275)
+                rezultatas += `<span style="color: red;">${skaicius}</span> `;
+            else
+                rezultatas += skaicius + ' ';
+
+            if(skaicius > 150)
+                skaiciuotuvas++;
+
+            i++;
+        }
+
+        document.write(rezultatas);
+        document.write('Skaičių didesnių nei 150 yra:', skaiciuotuvas);
+
+        document.write('<h1>Penkta užduotis</h1>');
+        //Vienoje eilutėje atspausdinkite visus skaičius nuo 1 iki 3000, 
+        //kurie dalijasi iš 77 be liekanos. Skaičius atskirkite kableliais. 4
+        //Po paskutinio skaičiaus kablelio neturi būti. Jeigu reikia, 
+        //panaudokite css, kad visi rezultatai matytusi ekrane.
+
+        i = 1;
+        rezultatas = '';
+        let kablelis = ', ';
+        let dydis = 10000;
+        let daliklis = 77;
+        let liekana = dydis % daliklis;
+        let paskutinisSkaicius = dydis - liekana;
+        // console.log(dydis % daliklis);
+
+        while(i <= dydis) {
+            if(i === paskutinisSkaicius)
+                kablelis = '';
+
+            if(i % daliklis === 0)
+                rezultatas += i + kablelis;
+
+            i++;
+        }
+
+        document.write(rezultatas);
+    </script>
+</body>
+</html>
