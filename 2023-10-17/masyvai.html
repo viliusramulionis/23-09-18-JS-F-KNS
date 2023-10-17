@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Masyvai</title>
+</head>
+<body>
+    <script>
+        function rand(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min + 1) + min);
+        }   
+
+        let masyvas = ['stringas', 10, false, undefined, null, function() {
+            console.log('Sveiki visi');
+        }];
+
+        // console.log(masyvas[0]);
+        // Masyvo elementų ilgio susigrąžinamas 
+        console.log(masyvas.length);
+
+        // Elemento pridėjimas į masyvo galą
+        masyvas.push('Pridėta reikšmė');
+        // Alternatyvus pridėjimo būdas
+        masyvas[masyvas.length] = 'Dar viena pridėta reikšmė';
+
+        //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/unshift
+        //Elemento pridėjimas į masyvo priekį
+
+        masyvas.unshift('Pridėtas tekstas į masyvo priekį');
+
+        //Elementų paėmimas iš masyvo pasinaudojant for ciklu
+        // for(let i = 0; i < masyvas.length; i++) {
+        //     console.log(masyvas[i]);
+        // }
+        
+        // For of - grąžina masyvo elemento reikšmes
+        for(let reiksme of masyvas) {
+            console.log(reiksme);
+        }
+
+        //For in - grąžina kiekvieno masyvo elemento indeksą
+        for(let indeksas in masyvas) {
+            console.log(masyvas[indeksas]);
+        }
+
+        //Sugeneruokite 100 elementų masyvą, kurio reikšmės būtų atsitiktinis skaičius nuo 99 iki 255
+        masyvas = [];
+
+        for(let i = 0; i < 100; i++) {
+            masyvas[i] = rand(99, 255);
+        }
+
+        console.log(masyvas);
+
+        // Naujo masyvo generavimas
+        let naujasMasyvas = [];
+
+        for(let i = 0; i < masyvas.length; i++) {
+            naujasMasyvas.push(masyvas[i]);
+        }
+
+        document.write(naujasMasyvas);
+    </script>
+</body>
+</html>
