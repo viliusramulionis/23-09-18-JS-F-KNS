@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function rand(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min + 1) + min);
+        }
+        //Sugeneruokite atsitiktinio (nuo 10 iki 20) ilgio masyvą, kurio visi, 
+        //išskyrus paskutinį, elementai yra atsitiktiniai skaičiai nuo 0 iki 10, 
+        //o paskutinis masyvas, kuris generuojamas pagal tokią pat salygą 
+        //kaip ir pirmasis masyvas. Viską pakartokite atsitiktinį 
+        //nuo 10 iki 30  kiekį kartų. Paskutinio masyvo paskutinis 
+        //elementas yra lygus 0;
+
+        // Komplikuotas būdas
+        // const pagrindinisKiekis = rand(10, 30);
+        // for(let a = 0; a < pagrindinisKiekis; a++) {
+        //     const masyvas = [];
+        //     const kiekis = rand(10, 20);
+        //     console.log(kiekis);
+
+        //     for(let i = 0; i < kiekis; i++) {
+        //         if(i === kiekis - 1) {
+        //             //Paskutinis skaicius
+        //             const kiekis = rand(10, 20);
+        //             masyvas[i] = [];
+        //             for(let x = 0; x < kiekis; x++) {
+        //                 if(x === kiekis - 1) {
+        //                     masyvas[i][x] = [];
+        //                     const kiekis = rand(10, 20);
+        //                     for(let y = 0; y < kiekis; y++) {
+        //                         if(y === kiekis - 1 && a === pagrindinisKiekis - 1) {
+        //                             masyvas[i][x].push(0)
+        //                         } else {
+        //                             masyvas[i][x].push(rand(10, 20));
+        //                         }
+        //                     }
+        //                 } else {
+        //                     masyvas[i].push(rand(0, 10));
+        //                 }
+        //             }
+        //         } else {
+        //             masyvas.push(rand(0, 10));
+        //         }
+        //     }
+
+        //     console.log(masyvas);
+        // }
+
+
+        // console.log([
+        //     5,
+        //     0,
+        //     10,
+        //     9,
+        //     4,
+        //     3,
+        //     5,
+        //     7,
+        //     10,
+        //     [
+        //         5,
+        //         0,
+        //         10,
+        //         9,
+        //         4,
+        //         3,
+        //         5,
+        //         7,
+        //         10, 
+        //         [
+        //             5,
+        //             0,
+        //             10,
+        //             9,
+        //             4,
+        //             3,
+        //             5,
+        //             7,
+        //             10, 
+        //         ]
+        //     ]
+        // ]);
+
+
+    </script>
+</body>
+</html>

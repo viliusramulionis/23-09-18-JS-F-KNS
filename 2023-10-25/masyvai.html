@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Masyvai</title>
+</head>
+<body>
+    <script>
+        function rand(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min + 1) + min);
+        }   
+
+        const array = [];
+        const object = {};
+
+        object.name = 'Vilius';
+
+        console.log(typeof array);
+        console.log(object);
+
+        // array['name'] = 'Vilius';
+        // console.log(array);
+
+        array[array.length] = 'Rasa';
+        array[array.length] = 'Tomas';
+        array[array.length] = 'Algirdas';
+        array[array.length] = 'Mantas';
+        array[array.length] = 'Sonata';
+
+        console.log(array);
+        
+        //map() - Paskirtis generuoti naują masyvą pagal sąlygas
+        const naujasMasyvas = array.map((reiksme, indeksas, masyvas) => {
+            if(reiksme != 'Mantas')
+                return reiksme;
+
+            return false;
+        });
+
+        console.log(naujasMasyvas);
+
+        //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter
+        //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find
+        //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/findIndex
+
+        //Multidimensinis masyvas (Multidimentional Array)
+        const pirmasMasyvas = [];
+
+        for(let i = 0; i < 100; i++) {
+            pirmasMasyvas[i] = [];
+
+            for(let y = 0; y < 10; y++) {
+                 pirmasMasyvas[i][y] = rand(0, 100);
+            }
+        }
+
+        console.log(pirmasMasyvas);
+    </script>
+</body>
+</html>

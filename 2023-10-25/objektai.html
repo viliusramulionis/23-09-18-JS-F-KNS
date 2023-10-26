@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objektai</title>
+</head>
+<body>
+    <script>
+        const key = 'vardas';
+        
+        //Deklaruojamas objektas su viena reikšme
+        const objektas = {
+            vardas: 'Vilius'
+        };
+
+        console.log(objektas.vardas);
+
+        //Reikšmės pridėjimas į objektą
+        objektas.pavarde = 'Ramulionis';
+
+        console.log(objektas);
+        
+        console.log(objektas[key]);
+
+        const extraKey = 'miestas';
+
+        objektas[extraKey] = 'Kaunas';
+
+        console.log(objektas);
+
+        const naujasObjektas = {
+            // Savybės (Properties)
+            adresas: 'Vytauto pr. 29',
+            miestas: 'Kaunas',
+            // Metodas (Method)
+            setAdresas: function() {
+                //this = yra objektas kuriame esame
+                this.adresas = 'Putvinskio 33';
+                return this;
+            },
+            setMiestas: function() {
+                this.miestas = 'Vilnius';
+                return this;
+            },
+            masyvas: [
+                { 
+                    adresas: 'Test',
+                    miestas: 'Testine pavarde'
+                },
+                { 
+                    miestas: 'Testine pavarde'
+                },
+                { 
+                    adresas: 'Test',
+                    miestas: 'Testine pavarde'
+                },
+                { 
+                    adresas: 'Test',
+                    miestas: 'Testine pavarde'
+                },
+            ]
+        };
+
+        // console.log(naujasObjektas.masyvas.filter(value => value.adresas).length);
+        let counter = 0;
+
+        for(const value of naujasObjektas.masyvas) {
+            if(value.adresas)
+                counter++
+        }
+
+        console.log(counter);
+
+        // naujasObjektas.adresas = 'Putvinskio 33';
+
+        //console.log(naujasObjektas);
+        // naujasObjektas.setAdresas().setMiestas();
+
+        // Grandininė reakcija (chaining)
+        console.log(naujasObjektas.setAdresas().setMiestas().miestas);
+
+        const masyvas = [
+            'Pirmas', 
+            'Antras',
+            'Trečias'
+        ];
+
+        // Spread operatorius paima visas masyve esančias reikšmes ir jas patalpina kaip atskirus parametrus
+        const naujasMasyvas = [...masyvas, 'Ketvirtas'];
+
+        console.log(naujasMasyvas);
+
+        const darVienasObjektas = {...naujasObjektas};
+        
+        console.log(darVienasObjektas);
+
+        const [pirmas, antras, trecias] = masyvas;
+
+        console.log(pirmas, antras, trecias);
+
+        const { miestas, adresas } = naujasObjektas;
+        
+        console.log(adresas);
+    </script>
+</body>
+</html>

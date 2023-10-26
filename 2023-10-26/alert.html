@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alert, Confirm</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+        body {
+            height: 100vh;
+        }
+    </style>
+</head>
+<body>
+    <div class="rezultatas"></div>
+    <button class="btn btn-warning">Redaguoti</button>
+    <button class="btn btn-danger">Ištrinti</button>
+    <script>
+        document.querySelector('button.btn-warning').onclick = () => {
+            // https://developer.mozilla.org/en-US/docs/Web/API/Window/alert
+            alert('Paspaudimas registruotas');
+        }
+
+        document.querySelector('button.btn-danger').onclick = () => {
+            if(confirm('Ar tikrai norite ištrinti?')) {
+                document.querySelector('.rezultatas').innerHTML = `
+                    <div class="alert alert-success">Ištrynimas pavyko</div>
+                `;
+            } else {
+                document.querySelector('.rezultatas').innerHTML = `
+                    <div class="alert alert-warning">Atsisakėte trynimo</div>
+                `;
+            }
+        }
+    </script>
+</body>
+</html>

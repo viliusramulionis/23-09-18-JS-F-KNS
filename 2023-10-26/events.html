@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Įvykiai</title>
+    <style>
+        .box {
+            width: 150px;
+            height: 150px;
+            background-color: brown;
+        }
+
+        .box2 {
+            width: 300px;
+            height: 300px;
+        }
+
+        .black {
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <!-- Inline atributo pagalba registruojamas įvykis -->
+    <div class="box" onclick="addText()"></div>
+    <div class="rezultatas"></div>
+    <div class="box2"></div>
+    <a href="https://google.com" class="link">Google</a>
+    <ul>
+        <li>Pirmas</li>
+        <li>Antras</li>
+        <li>Trečias</li>
+        <li>Ketvirtas</li>
+        <li>Penktas</li>
+    </ul>
+    <script>
+        function addText() {
+            console.log('Paspaudimas');
+            
+            document.querySelector('.rezultatas').textContent = 'Sveiki visi';
+        }
+
+        const box = document.querySelector('.box');
+
+        // document.querySelector('.box').addEventListener('click', addText);
+        box.addEventListener('click', (e) => {
+            console.log(e);
+            //CSS style atributo reikšmės paėmimas
+            // document.querySelector('.box').style.height
+            
+            //Norint susigrąžinti stiliaus reikšmes iš Internal arba External CSS
+            //https://developer.mozilla.org/en-US/docs/Web/API/Window/getComputedStyle
+
+            const style = getComputedStyle(box);
+
+            box.style.height = style.height.slice(0, -2) * 2 + 'px';
+            box.style.backgroundColor = 'black';
+        });
+
+        document.querySelector('.box2').onclick = () => {
+            // Norint susigrąžinti klasių sąrašą
+            // document.querySelector('.box2').classList
+            // Norint pridėti klasę
+            // document.querySelector('.box2').classList.add('black');
+            // Norint pašalinti klasę
+            // document.querySelector('.box2').classList.remove('black');
+            // Norint kaitalioti klasę priklausomai nuo to ar ši jau priskirta
+            // document.querySelector('.box2').classList.toggle('black');
+            
+            // Toggle metodo veikimas:
+            // if(document.querySelector('.box2').classList.contains('black')) {
+            //     document.querySelector('.box2').classList.remove('black');
+            // } else {
+            //     document.querySelector('.box2').classList.add('black');
+            // }
+        };
+
+        document.querySelector('.link').addEventListener('click', (e) => {
+            // Sustabdomas standartinis HTML veikimas
+            e.preventDefault();
+
+            e.target.style.fontSize = '2rem';
+        });
+
+        const toggleBackground = (e) => {
+            e.target.classList.toggle('black');
+        };
+
+        // To paties įvykio priskyrimas keliems elementams
+        document.querySelectorAll('ul > li').forEach(el => {
+            el.addEventListener('click', toggleBackground);
+        });
+     </script>
+</body>
+</html>

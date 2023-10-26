@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <style>
+        .box {
+            max-width: 500px;
+            box-sizing: border-box;
+            padding: 50px 60px; 
+            background: rgb(226, 226, 226);
+            box-shadow: 0 0 20px 0 rgba(0, 0, 0, .15);
+            font-family: Roboto;
+            margin: 0 auto;
+        }
+
+        .count {
+            font-size: 50px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+
+        .buttons button {
+            background: black;
+            color: white;
+            border-radius: 3px;
+            padding: .5rem 1rem;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="count">0</div>
+        <div class="buttons">
+            <button class="deduct" onclick="setDigit(event)">Deduct</button>
+            <button class="add" onclick="setDigit(event)">Add</button>
+            <button class="reset" onclick="setDigit(event)">Reset</button>
+        </div>
+    </div>
+    <script>
+        let digit = 0;
+
+        const setDigit = (e) => {
+            if(e.target.classList.contains('add'))
+                digit++;
+
+            if(e.target.classList.contains('deduct'))
+                digit--;
+
+            if(e.target.classList.contains('reset'))
+                digit = 0;
+
+            document.querySelector('.count').textContent = digit;
+        }
+    </script>
+</body>
+</html>

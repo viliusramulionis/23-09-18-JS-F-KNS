@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>setTimeout, setInterval</title>
+</head>
+<body>
+    <script>
+        //1000 = 1 sekundė
+        setTimeout(() => console.log('Funkcija suveikė'), 5000);
+
+        // Timeout panaikinimas
+        // clearTimeout()
+        // Intervalo panaikinimas
+        // clearInterval()
+        
+        const intervalas = setInterval(() => {
+            console.log('Intervalas vyksta');
+            
+            clearInterval(intervalas);
+        }, 1000);
+    </script>
+</body>
+</html>

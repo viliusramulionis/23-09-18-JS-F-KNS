@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body>
+    <div id="app"></div>
+    <div class="result"></div>
+    <ul>
+        <li>Pirmas</li>
+        <li>Antras</li>
+        <li>Trečias</li>
+        <li>Ketvirtas</li>
+    </ul>
+
+    <ol>
+        <li>Pirmas</li>
+        <li>Antras</li>
+        <li>Trečias</li>
+        <li>Ketvirtas</li>
+        <li>Penktas</li>
+    </ol>
+    <div class="data"></div>
+    <script>
+        //DOM - Document Object Model
+        console.log(document);
+
+        //https://developer.mozilla.org/en-US/docs/Web/API/Document
+
+        // Elemento susiradimas pagal ID atributą
+        const app = document.getElementById('app');
+        
+        //Teksto patalpinimas į elementą
+        app.innerText = 'Sveiki visi';
+
+        // textContent grečiau veikinti savybė
+        app.textContent = 'Labas Pasauli';
+        
+        //Norint papildyti tekstą
+        // app.textContent = app.textContent + ' Mieli žiūrovai';
+        app.textContent += ' Mieli žiūrovai';
+
+        // Norint pridėti HTML kodą
+        app.innerHTML = `<h1>Tai yra Javascript'o pridėtas HTML kodas</h1>`;
+        
+        // console.log(document.getElementsByClassName('result'));
+        document.getElementsByClassName('result')[0].textContent = 'Tekstas priskirtas prie rezultato';
+    
+        for(const result of document.getElementsByClassName('result')) {
+            result.textContent = 'Tekstas priskirtas prie rezultato';
+        }
+
+        // Elementų filtracija pagal CSS selektorius
+        document.querySelector('.result').textContent = 'Pakeitimai su CSS selektoriumi';
+        
+        document.querySelector('ul > li:nth-child(3)').textContent = 'Papildytas trečias elementas';
+        
+        //Norint išfiltruoti naugiau nei vieną elementą.
+        //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach
+        document.querySelectorAll('ol > li').forEach(el => {
+            el.textContent += ' elementas';
+        });
+
+        // for(const el of document.querySelectorAll('ol > li')) {
+        //     el.textContent += ' elementas';
+        // }
+
+        const masyvas = [
+            {
+                adresas: 'Testinis adresas',
+                miestas: 'Kaunas'
+            },
+            {
+                adresas: 'Testinis adresas',
+            },
+            {
+                adresas: 'Testinis adresas',
+                miestas: 'Kaunas'
+            },
+            {
+                miestas: 'Kaunas'
+            },
+        ];
+
+        const data = document.querySelector('.data');
+        let result = '<table>';
+        
+        for(const value of masyvas) {
+            result += `
+                <tr>
+                    <td>${value.adresas ? value.adresas : 'Adreso nėra'}</td>
+                    <td>${value.miestas ? value.miestas : 'Miesto nėra'}</td>
+                </tr>
+            `;
+        }
+
+        data.innerHTML += result + `</table>`;
+
+
+    </script>
+</body>
+</html>
