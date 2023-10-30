@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>createElement</title>
+</head>
+<body>
+    <div class="result"></div>
+    <script>
+        let show = false;
+        let title = 'Elemento pavadinimas';
+        const result = document.querySelector('.result');
+
+        // result.innerHTML = `<div 
+        //                         class="box ${show ? 'active' : ''}" 
+        //                         title="${title ? title : 'Pavadinimo nėra'}"
+        //                     ></div>`;
+
+        // //
+
+        // result.querySelector('.box') //TOliau atliekami veiksmai
+
+        const box = document.createElement('div');
+        box.classList.add('box');
+
+        if(show)
+            box.classList.add('active');
+
+        box.setAttribute('title', title ? title : 'Pavadinimo nera');
+
+        box.style.backgroundColor = 'tomato';
+        box.style.width = '500px';
+        box.style.height = '500px';
+        box.style.boxShadow = '0 0 15px 5px black';
+        box.style.border = '15px solid brown';
+        box.style.borderRadius = '30px';
+
+        // box.style = {
+        //     ...box.style,
+        //     width: '500px',
+        //     height: '500px'
+        // }
+
+        // console.log(box.style);
+
+        result.appendChild(box);
+
+        // `<div class="card">
+        //     <div class="image">
+        //         <img src="..." />   
+        //     </div>    
+        //     <h2>Pavadinimas</h2>
+        // </div>`;
+        
+    </script>
+</body>
+</html>

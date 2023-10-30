@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autocomplete</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+        .result {
+            font-size: 26px;
+        }
+
+        .result li {
+            list-style: none;
+            padding: .5rem 0;
+            border-bottom: 1px solid rgb(217, 217, 217);
+        }
+    </style>
+</head>
+<body>
+    <div class="container my-5">
+        <input type="text" name="search" class="form-control" />
+        <div class="result"></div>
+    </div>
+    <script>
+        const phrases = [
+            'How much is the fish?',
+            'How old is the earth?',
+            'Who build pyramids?',
+            'Where to buy new TV',
+            'Which is the most popular language in the world',
+            'Which is better PHP or Javascript?'
+        ];
+
+        const result = document.querySelector('.result');
+        const input = document.querySelector('[name="search"]');
+
+        input.addEventListener('keyup', (e) => {
+            if(e.target.value === '') 
+                return result.innerHTML = '';
+
+            let html = '';
+            for(const phrase of phrases) {
+                if(phrase.toLowerCase().includes(e.target.value.toLowerCase())) 
+                    html += `<li onclick="selectPhrase('${phrase}')">${phrase}</li>`;
+            }       
+            result.innerHTML = html;
+        });
+
+        const selectPhrase = (phrase) => {
+            input.value = phrase;
+            result.innerHTML = '';
+        }
+
+        
+    </script>
+</body>
+</html>

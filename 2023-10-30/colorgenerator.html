@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colors</title>
+    <style>
+        .box {
+            width: 500px;
+            height: 500px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    <script>
+        function rand(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min + 1) + min);
+        }   
+
+        const box = document.querySelector('.box');
+
+        box.style.backgroundColor = `rgb(${rand(0, 255)}, ${rand(0, 255)}, ${rand(0, 255)})`;
+    </script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON</title>
+</head>
+<body>
+    <script>
+        const masyvas = [
+            { pavadinimas: 'Testas', kaina: 19.99 }
+        ];
+
+        //Konvertuoja duomenis į JSON stringą
+        let json = JSON.stringify(masyvas);
+
+        //Konvertuoja duomenis iš JSON stringo
+        console.log(JSON.parse(json));
+
+    </script>
+</body>
+</html>
