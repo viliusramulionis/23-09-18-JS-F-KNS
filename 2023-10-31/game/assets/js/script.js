@@ -28,14 +28,14 @@ const gameInterval = setInterval(() => {
     game.style.backgroundPositionX = (pos - 10) + 'px';
     
     if(jump) {
-        if(ground < 200 && up)
-            ground += 25;
+        if(ground < 315 && up)
+            ground += 15;
 
-        if(ground === 200)
+        if(ground === 315)
             up = false;
 
         if(ground > 0 && !up)
-            ground -= 25;  
+            ground -= 15;  
 
         if(ground === 0) {
             jump = false;
@@ -53,15 +53,11 @@ const gameInterval = setInterval(() => {
             //Blogiečio pašalinimas
             villain.remove();
         }
-        console.log(villain.offsetTop, hero.offsetTop + hero.offsetHeight);
-        // if(hero.offsetTop + hero.offsetHeight <= villain.offsetTop)
-        //     clearInterval(gameInterval);
 
-        if(
-            hero.offsetTop + hero.offsetHeight <= villain.offsetTop &&
-            villain.offsetLeft <= hero.offsetLeft + hero.offsetWidth) 
-        {
-            clearInterval(gameInterval);
+        if(villain.offsetLeft <= 250 && villain.offsetLeft >= 150) {
+            if(hero.offsetTop + hero.offsetHeight >= villain.offsetTop) {
+                clearInterval(gameInterval);
+            }
         }
     }
     
