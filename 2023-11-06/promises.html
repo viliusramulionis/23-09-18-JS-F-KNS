@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promises (Pažadai)</title>
+</head>
+<body>
+    <script>    
+        // https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch
+        // fetch()
+
+        // Promises
+        //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise
+        
+        function rand(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min + 1) + min);
+        }
+
+        const atnesk = new Promise((ivykdyta, neivykdyta) => {
+            setTimeout(() => {
+                if(rand(0, 1) === 1) {
+                    ivykdyta('Pažadas buvo įvykdytas');
+                } else {
+                    neivykdyta('Nepavyko įvykdyti pažado');
+                }
+            }, 4000);
+        });
+
+        atnesk
+        .then(atsakymas => console.log(atsakymas))
+        .catch(klaida => console.log(klaida))
+        .finally(() => console.log('Pažado tikrinimas baigtas'));
+
+        // console.log(atnesk);
+        // then - teigiamu atveju
+        // catch - klaidos atveju
+        // finally - betkokiu atveju
+    </script>
+</body>
+</html>

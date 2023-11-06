@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search By Breed</title>
+    <style>
+        input {
+            width: 100%; 
+            border: 1px solid gray; 
+            padding: 1rem 2rem;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" placeholder="Enter dog breed" onkeyup="fetchBreed(event)" />
+    <div class="result"></div>
+    <script>
+        function fetchBreed(e) {
+            fetch(`https://dog.ceo/api/breed/${e.target.value}/images/random`)
+            .then(resp => resp.json())
+            .then(resp => {
+                if(resp.status === 'error')
+                    return;
+                
+                document.querySelector('.result').innerHTML = `<img src="${resp.message}" />`;
+            });
+        }
+
+        //Namų darbui:
+        //https://dog.ceo/api/breed/australian/shepherd/images/random
+    </script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dog Breeds</title>
+    <style>
+        img {
+            max-width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="result">Nuotrauka kraunasi....</div>
+    <button onclick="getPhoto()">Nauja nuotrauka</button>
+    <script>
+        // URL (Uniform Resource Locator): https://dog.ceo/api/breeds/list/all
+        // https (secure) http (non-secure) - protokolas
+        // dog.ceo - domenas, nukreipia i IP adresa: 104.21.17.246
+        // Endpoint: /api/breeds/list/all
+        function getPhoto() {
+            console.log('Prieš krovimą');
+            fetch('https://dog.ceo/api/breeds/image/random')
+            .then(resp => resp.json())
+            .then(resp => {
+                fetch(resp.message)
+                .then(() => {
+                    document.querySelector('.result').innerHTML = `<img src="${resp.message}">`;
+                })
+                .catch(() => document.querySelector('.result').textContent = 'Nuotrauka nerasta');
+            });
+            console.log('Po krovimo');
+        }
+
+        getPhoto();
+
+    </script>
+</body>
+</html>

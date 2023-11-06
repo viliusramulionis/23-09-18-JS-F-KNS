@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch</title>
+</head>
+<body>
+    <script>
+        // https://www.w3.org/TR/2003/REC-PNG-20031110/iso_8859-1.txt
+        fetch('https://www.w3.org/TR/2003/REC-PNG-20031110/iso_8859-1.txt')
+        .then(resp => resp.text())
+        .then(resp => console.log(resp));
+    </script>
+</body>
+</html>
