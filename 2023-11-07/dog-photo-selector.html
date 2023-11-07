@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dog Photo Selector</title>
+    <style>
+        /* select,
+        select > option {
+            text-transform: capitalize;
+        } */
+    </style>
+</head>
+<body>
+    <select></select>
+    <div class="res"></div>
+    <script>
+        function capitalize(string) {
+            return string.split(' ').map(
+                val => val[0].toUpperCase() + val.substring(1)
+            ).join(' ');
+        }
+
+
+        fetch('https://dog.ceo/api/breeds/list/all')
+        .then(resp => resp.json())
+        .then(resp => {
+            if(resp.status !== 'success')
+                return;
+            //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object
+            // Object.keys(resp.message).map(el => console.log(el));
+            
+            let res = '';
+
+            for(const key in resp.message) {
+                // const option = document.createElement('option');
+                // option.textContent = key;
+                // document.querySelector('select').appendChild(option);
+
+                if(resp.message[key].length > 0) {
+                    res += resp.message[key].map(subreed => 
+                        `<option value="${key}/${subreed}">
+                            ${capitalize(subreed + ' ' + key)}
+                        </option>`
+                    ).join('');
+                } else {
+                    res += `<option value="${key}">${capitalize(key)}</option>`;
+                }   
+            }
+
+            document.querySelector('select').innerHTML = `${res}`;
+        });
+
+        document.querySelector('select').addEventListener('change', (e) => {
+            fetch(`https://dog.ceo/api/breed/${e.target.value}/images/random`)
+            .then(resp => resp.json())
+            .then(resp => {
+                document.querySelector('.res').innerHTML = `<img src="${resp.message}" />`;
+            });
+        });
+    </script>
+</body>
+</html>
