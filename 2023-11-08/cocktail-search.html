@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cocktail Search Engine</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+        img {
+            max-width: 100%;
+        }
+        .container {
+            max-width: 1024px;
+        }
+
+        .cocktail {
+            cursor: pointer;
+        }
+
+        .loading {
+            width: 100vw;
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background: rgb(255 255 255 / 77%);
+            z-index: 100;
+        }
+
+        .loading::before {
+            content: "Kraunasi...";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="container my-5">
+        <form class="input-group" onsubmit="searchCocktails(event)">
+            <input type="text" class="form-control" placeholder="Enter cocktail name">
+            <button class="btn btn-success">Search</button>
+            <button type="reset" class="btn btn-warning" onclick="showCocktail(false)">I'm feeling lucky</button>
+        </form>
+        <div class="result row mt-3"></div>
+    </div>
+    <div class="loading"></div>
+    <script>
+        const base_url = 'https://www.thecocktaildb.com/api/json/v1/1/';
+        const result = document.querySelector('.result');
+        const loader = document.querySelector('.loading');
+
+        function fetchCocktails(url) {
+            loader.style.display = 'block';
+
+            fetch(url)
+            .then(resp => resp.json())
+            .then(resp => {
+                if(!resp.drinks)
+                    return result.innerHTML = '<h2>Pagal paieškos kriterijus kokteilių nerasta</h2>';
+
+                result.innerHTML = resp.drinks.map(drink => `
+                    <div class="cocktail col-4 mb-3" onclick="showCocktail(${drink.idDrink})">
+                        <img src="${drink.strDrinkThumb}" alt="${drink.strDrink}" />
+                        <h3>${drink.strDrink}</h3>
+                    </div>
+                `).join('');
+            })
+            .finally(() => loader.style.display = 'none');
+        }
+
+        function searchCocktails(e) {
+            e.preventDefault();
+
+            const val = document.querySelector('input').value;
+
+            fetchCocktails(base_url + 'search.php?s=' + val);
+
+            window.location.hash = 'search-' + val;
+        }
+
+        function filterByAlcohol(val) {
+            const url = base_url + 'filter.php?a=' + val;
+
+            fetchCocktails(url);
+        }
+
+        function showCocktail(id) {
+            const url = base_url + (id ? 'lookup.php?i=' + id : 'random.php');
+
+            loader.style.display = 'block';
+            fetch(url)
+            .then(resp => resp.json())
+            .then(resp => {
+                const drink = resp.drinks[0];
+                const ingredients = [];
+
+                window.location.hash = 'single-' + drink.idDrink;
+
+                for(let i = 1; i <= 15; i++) {
+                    if(drink['strIngredient' + i]) {
+                        const measure = drink['strMeasure' + i] ? drink['strMeasure' + i] : '';
+                        ingredients[ingredients.length] = `
+                            <li>${drink['strIngredient' + i]} ${measure}</li>
+                        `;
+                    }
+                }
+
+                result.innerHTML = `
+                    <div class="col-6">
+                        <img src="${drink.strDrinkThumb}" alt="${drink.strDrink}" />
+                    </div>
+                    <div class="col-6">
+                        <h2>${drink.strDrink}</h2>
+                        <p>${drink.strInstructions}</p>
+                        <ul>
+                            <li><a href="#filter-${drink.strAlcoholic}" onclick="filterByAlcohol('${drink.strAlcoholic}')">${drink.strAlcoholic}</a></li>
+                            <li>Category: ${drink.strCategory}</li>
+                            <li>Glass Type: ${drink.strGlass}</li>
+                            <li>IBA: ${drink.strIBA}</li>
+                            <li>Image Atribution: ${drink.strImageAttribution}</li>
+                        </ul>
+                        <h4>Ingredients:</h4>
+                        <ul>
+                            ${ingredients.join('')}
+                        </ul>
+                        <button class="btn btn-primary" onclick="searchCocktails(event)">Back to cocktail list</button>
+                    </div>
+                `;
+            })
+            .finally(() => loader.style.display = 'none');
+        }
+
+        function router() {
+            let hash = window.location.hash;
+
+            if(!hash) 
+                return;
+
+            // search-fraze
+            // single-id
+            // filter-alcoholic
+
+            hash = hash.replace('#', '').split('-');
+            
+            // Switch struktūra naudojant kondicinę logiką
+            // if(hash[0] === 'search') {
+            //     //
+            // } else if(hash[0] === 'single') {
+            //     //
+            // } else if(hash[0] === 'filter') {
+            //     //
+            // } else {
+            //     //
+            // }
+            
+            //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/switch
+            switch(hash[0]) {
+                case 'search':
+                    fetchCocktails(base_url + 'search.php?s=' + hash[1]);
+                    break;
+                case 'single':
+                    showCocktail(hash[1]);
+                    break;
+                case 'filter':
+                    filterByAlcohol(hash[1]);
+                    break;
+                default:
+                    console.log('Prašome nelaužyti mūsų sistemos');
+            }
+            
+        }
+
+        router();
+
+        window.onload = () => {
+            loader.style.display = 'none';
+        }
+    </script>
+</body>
+</html>
