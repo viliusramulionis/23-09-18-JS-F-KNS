@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OOP</title>
+</head>
+<body>
+    <script>
+        function rand(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min + 1) + min);
+        }
+
+        // // Object Oriented Programming
+        // const x = {
+        //     a: true,
+        //     b: function() {
+        //         return this.a;
+        //     }
+        // };
+
+        // console.log(x.b());
+        
+        // Klasės sukūrimas naudojantis funkcija
+        // function A() {
+        //     this.labas = true;
+
+        //     this.test = function() {
+        //         return 'Sveiki visi';
+        //     }
+        // }
+
+        // const a = new A();
+        // console.log(a);
+        // console.log(a.labas);
+
+        //MODIFIKACIJOS
+
+        // class A {
+        //     name = 'Adomas';
+
+        //     greeting() {
+        //         return `Sveiki, ${this.name}`;
+        //     }
+        // }
+
+        // // Instancija (instance) - yra sugeneruotas objektas pagal klasę
+        // const a = new A;
+        // console.log(a.greeting());
+        // const aA = new A;
+        // console.log(aA.greeting());
+
+        // const aB = new A;
+        // aB.name = 'Giedrė';
+        // console.log(aB.greeting());
+        // aB.lastName = 'Kazlauskaitė';
+        // aB.greeting = function() {
+        //     return `Sveiki, ${this.name} ${this.lastName}`;
+        // }
+
+        // console.log(aB.greeting());
+
+
+        //KONTRUKTORIUS
+        class A {
+            //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/Private_properties
+            //Privati savybė
+            #name = 'Klasės id: ';
+            #array = ['Objektai', 'Klasės', 'Metodai'];
+
+            constructor(number) {
+                //Nurodomi norimi atlikti veiksmai iniciavus klasę
+                this.#name += number;
+            }
+
+            //Informacijos susigrąžinimas (geteris)
+            getName() {
+                return this.#name;
+            }
+
+            //Infomracijos modifikavimas (seteris)
+            setName(name) {
+                this.#name = name;
+            }
+
+            mapArray() {
+                return this.#array.filter(val => val.length > 6);
+            }
+
+            #privatusMetodas() {
+                return 'Privati reikšmė';
+            }
+
+            viesasMetodas() {
+                return this.#privatusMetodas();
+            }
+        }
+
+        console.log(new A(rand(0, 10000)).getName());
+        console.log(new A(rand(0, 10000)).getName());
+        console.log(new A(rand(0, 10000)).getName());
+        console.log(new A(rand(0, 10000)).getName());
+
+        const a = new A(rand(0, 10000));
+        console.log(a);
+
+        console.log(a.name);
+        // a.array = false;
+        console.log(a.mapArray());
+        console.log(a.viesasMetodas());
+
+        // Paveldėjimai
+
+        class B extends A {
+            birthday = '1980-04-11';   
+            #name = '';
+
+            constructor(number) {
+                // Nurodymas paleisti tėvinės klasės konstruktorių
+                super(number);
+                this.#name = 'Testas';
+            }
+
+            setBirthday(birthday) {
+                this.birthday = birthday;
+
+                return this;
+            }
+
+            setName(name) {
+                this.#name = name;
+
+                return this;
+            }
+        }
+
+        const b = new B(rand(0, 10000));
+
+        //Chaining - grandininė reakcija
+        b.setBirthday('1979-02-02').setName('Ieva');
+
+        console.log(b);
+
+        class C {
+            static name = 'Karolis';
+
+            static getName() {
+                return this.name;
+            }
+        }
+
+        C.name = 'Giedrius';
+        console.log(C.getName());
+
+        console.log(Date.now());
+        console.log(new Date());
+
+    </script>
+</body>
+</html>
