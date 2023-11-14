@@ -1,4 +1,26 @@
 // require('./src/module.js'); //CommonJS
-import funkcija from './src/module.js';
+import Televizorius from './src/televizorius.js';
+import chalk from 'chalk';
 
-console.log(funkcija());
+
+//Televizoriaus aplikacija
+// const tv = new Televizorius('Sony');
+// tv.setGarsas(1210);
+// tv.setKanalas(55);
+// tv.factoryReset();
+// console.log(chalk.blue(tv.statusas()));
+
+
+//Ciklo pavyzdys
+// for(let i = 0; i < 100000; i++) {
+//     console.log(chalk.greenBright('A'));
+// }
+
+//Intervalas
+// setInterval(() => {
+//     console.log(chalk.greenBright('A'));
+// }, 100);
+
+
+//process.stdout.columns = grąžinamas terminale talpinamų simbolių kiekis
+//process.stdout.rows = grąžinamas terminale talpinamų eilučių kiekis
