@@ -1,0 +1,21 @@
+.header {
+    background-color: white;
+    display: flex;
+    padding: 1rem 0;
+}
+
+.logo {
+    max-width: 70px;
+}
+
+.image {
+    width: 300px;
+    height: 100px;
+    background-color: cyan;
+}
+
+.headerFlex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

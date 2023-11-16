@@ -1,0 +1,10 @@
+.product {
+    display: flex;
+    background-color: white;
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.1);
+    gap: 1rem;
+  }
+  
+.product img {
+    display: block;
+  }
