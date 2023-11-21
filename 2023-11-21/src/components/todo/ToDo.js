@@ -25,6 +25,21 @@ export default () => {
         // console.log(data);
     }
 
+    const handleDelete = (index) => {
+        data.splice(index, 1);
+        setValue([...data]);
+    }
+
+    const handleEdit = (index, text) => {
+        if(typeof edit === 'number') {
+            data[index].value = value; 
+            setEdit([...data]);
+        } else { 
+            setEdit(index);
+            setValue(text);
+        }
+    }
+
     return (
         <>
             <form
@@ -71,20 +86,13 @@ export default () => {
                         <button 
                             className="btn btn-warning"
                             onClick={() => {
-                                if(typeof edit === 'number') {
-                                    data[index].value = value; 
-                                    setEdit([...data]);
-                                } else { 
-                                    setEdit(index);
-                                    setValue(val.value);
-                                }
+                                handleEdit(index, val.value);
                             }}
                         >Edit</button>
                         <button 
                             className="btn btn-danger"
                             onClick={() => {
-                                data.splice(index, 1);
-                                setValue([...data]);
+                                handleDelete(index);
                             }}
                         >Delete</button>
                     </div>
