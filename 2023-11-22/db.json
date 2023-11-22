@@ -1,0 +1,62 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "Testinis pavadinimas",
+      "author": "typicode"
+    },
+    {
+      "title": "awdawdawd",
+      "author": "awdawdawdawd",
+      "id": 2
+    },
+    {
+      "title": "awdawdawdawdawdawd",
+      "author": "awdawdawdawd",
+      "id": 3
+    },
+    {
+      "id": 4
+    },
+    {
+      "title": "Testinis irasas",
+      "author": "Naujas Testinis Irasas",
+      "id": 5
+    },
+    {
+      "title": "Naujas irasas",
+      "author": "Dar vienas autorius",
+      "id": 6
+    },
+    {
+      "title": "Testas",
+      "author": "",
+      "id": 7
+    },
+    {
+      "title": "Testas",
+      "author": "awdawdawdawd",
+      "id": 8
+    },
+    {
+      "title": "Testas",
+      "author": "awdawdawdawd",
+      "id": 9
+    },
+    {
+      "title": "Testas",
+      "author": "awdawdawdawd",
+      "id": 10
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
